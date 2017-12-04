@@ -1,15 +1,19 @@
 
 public class Team7SortCompetition 
 {
-public static void main(String args[]) {
-		
+	public static void main(String args[]) 
+	{
+		int[] arr1 = {5,1,8,3,9,4,2};
+		long temp4 = System.nanoTime();
+		challengeOne(arr1);
+		temp4 = System.nanoTime() - temp4;
+		printArray2(arr1);
+		System.out.println(temp4);
 	}
 	public static int challengeOne(int[] arr)
 	{
-		for(int i = 0; i < arr.length; i++) 
-		{
-			
-		}
+		quickSort(arr,0,arr.length - 1);
+		return arr[arr.length/2];
 		
 	}
 	public static int challengeTwo(String[] arr)
@@ -88,8 +92,8 @@ public static void main(String args[]) {
 		if(front < back) {
 			if(back - front > 1)
 			{
-				quickSort(list1,front, partition(list1,front, back)/3); 
-				quickSort(list1,partition(list1,front, back)/3, back); 
+				quickSort(list1,front, partition(list1,front, back)); 
+				quickSort(list1,partition(list1,front, back), back); 
 			}
 		}
 	}
