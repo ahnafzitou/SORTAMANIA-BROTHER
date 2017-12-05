@@ -21,7 +21,8 @@ public class Team7SortCompetition
 			//challengeThree(arr1);
 			temp4 = System.nanoTime() - temp4;
 			temp5+= temp4;
-			System.out.println(temp5);
+			long milli = temp5/(10^6);
+			System.out.println(milli);
 		}
 		//System.out.println(temp5/runAmount);
 	}
