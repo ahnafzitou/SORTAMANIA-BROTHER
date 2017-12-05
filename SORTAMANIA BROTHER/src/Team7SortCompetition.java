@@ -14,6 +14,7 @@ public class Team7SortCompetition
 			{
 				arr1[j] = (int)Math.floor(Math.random()*10000);
 			}
+			
 			long temp4 = System.nanoTime();
 			challengeOne(arr1);
 			//printArray2(arr1);
@@ -21,7 +22,7 @@ public class Team7SortCompetition
 			//challengeThree(arr1);
 			temp4 = System.nanoTime() - temp4;
 			temp5+= temp4;
-			long milli = temp5/(10^6);
+			double milli = (double) temp5/(1000000);
 			System.out.println(milli);
 		}
 		//System.out.println(temp5/runAmount);
@@ -138,7 +139,7 @@ public class Team7SortCompetition
 			if(back - front > 1)
 			{
 				quickSort(list1,front, partition(list1,front, back)); 
-				quickSort(list1,partition(list1,front, back), back); 
+				quickSort(list1,partition(list1,front, back)+1, back); 
 			}
 		}
 	}
