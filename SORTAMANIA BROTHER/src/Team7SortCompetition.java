@@ -24,7 +24,7 @@ public class Team7SortCompetition
 			System.out.println(temp5);
 		}
 		//System.out.println(temp5/runAmount);
-		
+		//1 
 		int[][] array = new int [1000][1000];
 		for(int i=0; i<1000; i++)
 		{
