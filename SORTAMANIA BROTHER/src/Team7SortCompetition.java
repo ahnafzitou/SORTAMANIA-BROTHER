@@ -194,5 +194,5 @@ public class Team7SortCompetition
 		}
 		System.out.println();
 	}
-
+ 
 }
