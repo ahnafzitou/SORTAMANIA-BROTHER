@@ -24,6 +24,25 @@ public class Team7SortCompetition
 			System.out.println(temp5);
 		}
 		//System.out.println(temp5/runAmount);
+		
+		int[][] array = new int [1000][1000];
+		for(int i=0; i<1000; i++)
+		{
+			for(int j=0; j<1000; j++)
+			{
+				int random = (int) (Math.random()*10000);
+				array[i][j] = random;
+			}
+		}
+		int median = 0;
+		
+		double startTime = System.nanoTime();
+		median = challengeFour(array);
+		double endTime = System.nanoTime();
+		double finalTime = endTime - startTime;
+		
+		System.out.println("Final run time " + finalTime + "\nThe Median Value is " + median);
+		
 	}
 	public static int challengeOne(int[] arr)
 	{
@@ -53,7 +72,24 @@ public class Team7SortCompetition
 	}
 	public static int challengeFour(int[][] arr)
 	{
-		return 0;
+		int[] medianArr = new int [arr[0].length]; //array to add the medians in
+		int median = 0; //median of the sub array
+		
+		for(int i=0; i< arr[0].length; i++)
+		{
+			quickSort(arr[i], 0, arr.length-1); //sorts all sub arrays into ascending order
+			for(int j=0; j<arr[i].length; j++) //loops through each sub array
+			{
+				median = (arr[j][499] + arr[j][500])/2; //finds the median of the sub array
+				medianArr[i] = median; // adds the median to the array
+			}
+		}
+		
+		quickSort(medianArr, 0, medianArr.length-1); // sorts all the medians in the median array in ascending order
+		
+		median = (medianArr[499] + medianArr[500])/2; // finds the median of the median array
+		
+		return median;
 		
 	}
 	public static int challengeFive(int[] arr)
