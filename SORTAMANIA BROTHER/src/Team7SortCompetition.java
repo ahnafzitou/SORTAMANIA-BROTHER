@@ -91,7 +91,7 @@ public class Team7SortCompetition
 		
 		return median;
 		
-	}
+	} 
 	public static int challengeFive(int[] arr)
 	{
 		return 0;
