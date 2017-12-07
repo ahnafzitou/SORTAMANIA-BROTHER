@@ -1,5 +1,5 @@
 
-public class Team7SortCompetition 
+public class Team7SortCompetition
 {
 	public static void main(String args[]) 
 	{
@@ -16,18 +16,19 @@ public class Team7SortCompetition
 			}
 			
 			long temp4 = System.nanoTime();
-			challengeOne(arr1);
+			//challengeOne(arr1);
+			challengeTwo(arr2,"Ahnaf");
 			//printArray2(arr1);
 			//System.out.println(challengeOne(arr1));
 			//challengeThree(arr1);
 			temp4 = System.nanoTime() - temp4;
 			temp5+= temp4;
-			double milli = (double) temp4/(1000000);
+			double milli = (double) temp4*(1000000);
 			System.out.println(milli);
 		}
 		//System.out.println(temp5/runAmount);
 		//1 
-		int[][] array = new int [1000][1000];
+		/*int[][] array = new int [1000][1000];
 		for(int i=0; i<1000; i++)
 		{
 			for(int j=0; j<1000; j++)
@@ -43,7 +44,7 @@ public class Team7SortCompetition
 		double endTime = System.nanoTime();
 		double finalTime = endTime - startTime;
 		
-		System.out.println("Final run time " + finalTime + "\nThe Median Value is " + median);
+		System.out.println("Final run time " + finalTime + "\nThe Median Value is " + median);*/
 		
 	}
 	public static int challengeOne(int[] arr)
@@ -56,10 +57,17 @@ public class Team7SortCompetition
 		return arr[arr.length/2];
 		
 	}
-	public static int challengeTwo(String[] arr)
+	public static int challengeTwo(String[] arr, String query)
 	{
-		
-		return 0;
+		bubbleSort(arr);
+		for(int i = 0; i < arr.length; i++)
+		{
+			if(arr[i].equals(query))
+			{
+				return i;
+			}
+		}
+		return -1;
 		
 	}
 	public static int challengeThree(int[] arr)
@@ -94,7 +102,7 @@ public class Team7SortCompetition
 		return median;
 		
 	} 
-	public static int challengeFive(int[] arr)
+	public static int challengeFive(Comparable[] arr, Comparable query)
 	{
 		return 0;
 		
@@ -194,5 +202,33 @@ public class Team7SortCompetition
 		}
 		System.out.println();
 	}
+	public static void swap(String[] arr, int i, int j)
+	{
+		String temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+	public static void bubbleSort(String[] list) {
+		boolean sorted = false;
+		while(!sorted){
+			sorted = true;
+			for(int i = 0; i < list.length-1; i++) {
+				if(list[i].compareTo(list[i+1])>0)
+				{
+					swap(list, i, i + 1);
+					sorted = false;
+				}
+			}
+		}
+	}
+	public static void printArray(String[] arr)
+	{
+		for(int i = 0; i < arr.length; i++)
+		{
+			System.out.print("[" + arr[i] + "]");
+		}
+		System.out.println();
+	}
  
 }
+
